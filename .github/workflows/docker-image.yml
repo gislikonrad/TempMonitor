@@ -8,7 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
+      packages: write
     steps:
     - uses: actions/checkout@v4
     - id: semver
@@ -18,7 +20,7 @@ jobs:
         default-version: '1.0.0'
         previous-major-version: 1
         previous-minor-version: 0
-        create-release: false
+        create-release: true
     - name: Build and push Docker images
       uses: docker/build-push-action@v5.3.0
       with:
