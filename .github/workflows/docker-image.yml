@@ -47,7 +47,7 @@ jobs:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         file: ./src/TempMonitor/Dockerfile
         # List of metadata for an image
-        platforms: linux/arm64        
+        platforms: linux/arm64,linux/amd64        
         push: true
         tags: ghcr.io/gislikonrad/temp-monitor:${{ steps.semver.outputs.core-version }}
 
