@@ -10,7 +10,7 @@ var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
 var configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
-    .AddJsonFile($"appsettings.{environment.ToLower()}.json", optional: true, reloadOnChange: false)
+    .AddJsonFile($"appsettings.{environment?.ToLower()}.json", optional: true, reloadOnChange: false)
     .AddEnvironmentVariables()
     .Build();
 
