@@ -4,4 +4,4 @@ WORKDIR /app
 COPY ./publish .
 ENV ASPNETCORE_ENVIRONMENT=Production
 EXPOSE 1234
-ENTRYPOINT ["dotnet", "TempMonitor.dll"]
+ENTRYPOINT ["TempMonitor"]
