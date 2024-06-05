@@ -38,6 +38,7 @@ jobs:
       uses: docker/build-push-action@v5.3.0
       with:
         context: .
+        github-token: ${{ secrets.GITHUB_TOKEN }}
         file: ./src/TempMonitor/Dockerfile
         # List of metadata for an image
         platforms: linux/arm64        
