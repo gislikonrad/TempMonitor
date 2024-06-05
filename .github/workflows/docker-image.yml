@@ -21,11 +21,14 @@ jobs:
         previous-major-version: 1
         previous-minor-version: 0
         create-release: true
+        
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
     - name: Build and push Docker images
       uses: docker/build-push-action@v5.3.0
       with:
-        context: src
-        file: src/TempMonitor/Dockerfile
+        context: ./src
+        file: ./src/TempMonitor/Dockerfile
         # List of metadata for an image
         platforms: linux/arm64        
         push: true
