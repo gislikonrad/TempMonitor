@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "TempMonitor": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+
+        "TempMonitor__HostName": "raspberrypi"
+      },
+      "applicationUrl": "http://127.0.0.1:1234",
+      "launchUrl": "metrics"
+    }
+  }
+}
