@@ -39,7 +39,12 @@ public class PiTempCommand : ITempCommand
                 "/bin/vcgencmd not found. This container is designed to be run on a Raspberry Pi.");
         
         _logger.LogDebug("Running '{command}'", "/bin/vcgencmd measure_temp");
-        var info = new ProcessStartInfo("/bin/vcgencmd", "measure_temp");
+        var info = new ProcessStartInfo("/bin/vcgencmd", "measure_temp")
+        {           
+            UseShellExecute = false,
+            RedirectStandardError = true,
+            RedirectStandardOutput = true
+        };
         var process = new Process
         {
             StartInfo = info
